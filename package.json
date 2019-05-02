@@ -1,0 +1,53 @@
+{
+  "name": "cms",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/graphql": "^14.0.4",
+    "@types/moment": "^2.13.0",
+    "@types/numeral": "0.0.25",
+    "@types/react": "^16.8.15",
+    "@types/react-infinite-scroller": "^1.0.7",
+    "@types/react-router-dom": "^4.3.2",
+    "acl-permissions": "0.0.9",
+    "ant-design-pro": "2.1.0",
+    "antd": "3.16.5",
+    "apollo-cache-inmemory": "^1.3.12",
+    "apollo-client": "^2.4.8",
+    "apollo-link-context": "^1.0.12",
+    "apollo-link-http": "^1.5.9",
+    "dotenv": "^6.0.0",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
+    "mobx": "^5.0.3",
+    "mobx-react": "^5.2.5",
+    "moment": "^2.22.2",
+    "numeral": "^2.0.6",
+    "react-apollo": "^2.3.3",
+    "react-chat-widget": "^2.1.4-1",
+    "react-dom": "^16.4.2",
+    "react-infinite-scroller": "^1.2.1",
+    "react-markdown": "^4.0.3",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts-ts": "^3.1.0",
+    "sw-precache-cra": "^1.0.0-alpha.2",
+    "webpanel-antd": "^0.0.30",
+    "webpanel-auth": "^0.0.24",
+    "webpanel-data": "^0.0.38"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build && sw-precache-cra --config sw-config.js",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.5.8",
+    "@types/react-dom": "16.8.4",
+    "@types/react-router": "^4.4.5",
+    "typescript": "^3.4.5"
+  }
+}
