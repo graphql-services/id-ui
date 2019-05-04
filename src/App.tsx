@@ -14,6 +14,7 @@ import { InvitationConfirmForm } from './components/invitation/InvitationConfirm
 // import { Route } from 'react-router-dom';
 import { LocaleProvider } from 'antd';
 import { LoginForm } from './components/login/LoginForm';
+import { ResetPasswordForm } from './components/reset-password/ResetPasswordForm';
 // import { ENV } from './env';
 // import { Redirect } from 'react-router';
 import { client } from './graphql';
@@ -34,7 +35,12 @@ export const App = () => {
               <InvitationConfirmForm requestID={match.params.id} />
             )}
           />
-          <Route path="/reset-password" component={() => <a>aaa</a>} />
+          <Route
+            path="/reset-password/:id"
+            component={({ match }: RouteComponentProps<any>) => (
+              <ResetPasswordForm requestID={match.params.id} />
+            )}
+          />
           <Route
             path="/forgot-password"
             component={(props: RouteComponentProps<any>) => (
