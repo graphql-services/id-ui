@@ -9,6 +9,7 @@ import { RESET_PASSWORD_MUTATION } from 'src/graphql/mutations/reset-password';
 
 export interface IResetPasswordFormProps {
   requestID: string;
+  onSuccess?: () => void;
 }
 export interface IResetPasswordFormState {
   sending: boolean;
@@ -52,6 +53,9 @@ export class ResetPasswordForm extends React.Component<
                 this.setState({ error: err });
               }
               this.setState({ sending: false });
+              if (this.props.onSuccess) {
+                this.props.onSuccess();
+              }
             }}
             render={context => (
               <Modal

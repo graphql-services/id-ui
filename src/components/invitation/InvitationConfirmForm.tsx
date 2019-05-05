@@ -9,6 +9,7 @@ import { FormContext } from 'webpanel-antd/lib/form/form/Form';
 
 export interface InvitationConfirmFormProps {
   requestID: string;
+  onSuccess?: () => void;
 }
 export interface InvitationConfirmFormState {
   sending: boolean;
@@ -52,6 +53,9 @@ export class InvitationConfirmForm extends React.Component<
                 this.setState({ error: err });
               }
               this.setState({ sending: false });
+              if (this.props.onSuccess) {
+                this.props.onSuccess();
+              }
             }}
             render={context => (
               <Modal

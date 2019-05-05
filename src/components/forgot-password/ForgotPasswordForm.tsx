@@ -5,9 +5,11 @@ import { Form, FormField } from 'webpanel-antd';
 import { Mutation, MutationFn } from 'react-apollo';
 
 import { FORGOT_PASSWORD_MUTATION } from 'src/graphql/mutations/forgot-password';
+import { FormContext } from 'webpanel-antd/lib/form/form/Form';
 
 export interface IForgotPasswordFormProps {
   onCancel?: () => void;
+  onSuccess?: () => void;
 }
 
 export interface IForgotPasswordFormState {
@@ -29,7 +31,7 @@ export class ForgotPasswordForm extends React.Component<
       <Mutation mutation={FORGOT_PASSWORD_MUTATION}>
         {(confirm: MutationFn<any, any>) => (
           <Form
-            onSave={async values => {
+            onSave={async (values: any, context: FormContext) => {
               this.setState({ sending: true, error: undefined });
 
               try {
@@ -40,6 +42,10 @@ export class ForgotPasswordForm extends React.Component<
                 this.setState({ error: err });
               }
               this.setState({ sending: false });
+              if (this.props.onSuccess) {
+                this.props.onSuccess();
+              }
+              context.form.resetFields();
             }}
             render={context => (
               <Modal
